@@ -10,6 +10,8 @@ Source0:	http://dl.sourceforge.net/xfe/%{name}-%{version}.tar.gz
 URL:		http://roland65.free.fr/xfe/
 BuildRequires:	automake
 BuildRequires:	fox-devel >= 1.2
+BuildRequires:	libpng-devel
+BuildRequires:	libstdc++-devel
 Requires:	fox >= 1.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
