@@ -5,7 +5,9 @@ Version:	0.54.2
 Release:	0.1
 License:	GPL
 Group:		Applications/File
-Source0:	%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/xfe/%{name}-%{version}.tar.gz
+# Source0-md5:	4d50faa3153cd1ff4e9f4237926f44b1
+URL:		http://www.roland65.ovh.org/xfe/xfe.html
 BuildRequires:	fox-devel >= 1.0
 Requires:	fox >= 1.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
