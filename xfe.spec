@@ -7,8 +7,8 @@ License:	GPL
 Group:		Applications/File
 Source0:	http://dl.sourceforge.net/xfe/%{name}-%{version}.tar.gz
 # Source0-md5:	625a4c8e152314363d2f3a27cc8fa6cc
-# Source0-size:	828770
 URL:		http://roland65.free.fr/xfe/
+BuildRequires:	automake
 BuildRequires:	fox-devel >= 1.2
 Requires:	fox >= 1.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
