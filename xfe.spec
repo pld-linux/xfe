@@ -30,6 +30,7 @@ MS-Explorer przy czym jest prosty i szybki.
 %setup -q
 
 %build
+cp -f /usr/share/automake/config.sub .
 %configure \
 	 --with-included-gettext \
 	 --with-static=no
@@ -51,7 +52,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS README TODO FAQ BUGS
 %attr(755,root,root) %{_bindir}/*
-%{_libdir}/foxicons
-%{_libdir}/foxrc
+%{_prefix}/lib/foxicons
+%{_prefix}/lib/foxrc
 %{_pixmapsdir}/*
 %{_mandir}/man1/*
