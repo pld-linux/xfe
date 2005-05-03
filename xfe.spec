@@ -1,15 +1,16 @@
 Summary:	X File Explorer (Xfe) is a filemanager for X
 Summary(pl):	X File Explorer - zarz±dca plików dla X
 Name:		xfe
-Version:	0.72
+Version:	0.80
 Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	http://dl.sourceforge.net/xfe/%{name}-%{version}.tar.gz
-# Source0-md5:	625a4c8e152314363d2f3a27cc8fa6cc
+# Source0-md5:	fc980b3ad44a2160d9289df1fabb09c4
 URL:		http://roland65.free.fr/xfe/
 BuildRequires:	automake
-BuildRequires:	fox-devel >= 1.2
+BuildRequires:	fox-devel >= 1.4
+BuildRequires:	fox-devel < 1.5
 BuildRequires:	libpng-devel
 BuildRequires:	libstdc++-devel
 Requires:	fox >= 1.2
@@ -33,9 +34,7 @@ MS-Explorer przy czym jest prosty i szybki.
 
 %build
 cp -f /usr/share/automake/config.sub .
-%configure \
-	 --with-included-gettext \
-	 --with-static=no
+%configure 
 
 %{__make}
 
@@ -52,7 +51,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS README TODO FAQ BUGS
+%doc AUTHORS BUGS ChangeLog FAQ README TODO
 %attr(755,root,root) %{_bindir}/*
 %{_prefix}/lib/foxicons
 %{_prefix}/lib/foxrc
