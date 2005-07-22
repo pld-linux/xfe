@@ -1,12 +1,12 @@
 Summary:	X File Explorer (Xfe) is a filemanager for X
 Summary(pl):	X File Explorer - zarz±dca plików dla X
 Name:		xfe
-Version:	0.80
+Version:	0.84
 Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	http://dl.sourceforge.net/xfe/%{name}-%{version}.tar.gz
-# Source0-md5:	fc980b3ad44a2160d9289df1fabb09c4
+# Source0-md5:	8251a0c1545d3cbbb909beb8027414a6
 URL:		http://roland65.free.fr/xfe/
 BuildRequires:	automake
 BuildRequires:	fox-devel >= 1.4
