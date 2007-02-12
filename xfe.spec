@@ -1,5 +1,5 @@
 Summary:	X File Explorer (Xfe) is a filemanager for X
-Summary(pl.UTF-8):   X File Explorer - zarządca plików dla X
+Summary(pl.UTF-8):	X File Explorer - zarządca plików dla X
 Name:		xfe
 Version:	0.84
 Release:	1
