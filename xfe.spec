@@ -1,5 +1,5 @@
 Summary:	X File Explorer (Xfe) is a filemanager for X
-Summary(pl):	X File Explorer - zarz±dca plików dla X
+Summary(pl.UTF-8):   X File Explorer - zarzÄ…dca plikÃ³w dla X
 Name:		xfe
 Version:	0.84
 Release:	1
@@ -22,11 +22,11 @@ popular X Win Commander, which is discontinued. Xfe is desktop
 independent and is written with the C++ Fox Toolkit. It has Windows
 Commander or MS-Explorer look and is very fast and simple.
 
-%description -l pl
-X File Explorer (Xfe) to zarz±dca plików dla systemu X Window. Jest
-oparty na popularnym X Win Commander, który nie jest ju¿ rozwijany.
-Xfe jest niezale¿ny od desktopu, jest napisany za pomoc± C++ Fox
-Toolkit. Mo¿e wygl±daæ jak Windows Commander (Total Commander ;)) lub
+%description -l pl.UTF-8
+X File Explorer (Xfe) to zarzÄ…dca plikÃ³w dla systemu X Window. Jest
+oparty na popularnym X Win Commander, ktÃ³ry nie jest juÅ¼ rozwijany.
+Xfe jest niezaleÅ¼ny od desktopu, jest napisany za pomocÄ… C++ Fox
+Toolkit. MoÅ¼e wyglÄ…daÄ‡ jak Windows Commander (Total Commander ;)) lub
 MS-Explorer przy czym jest prosty i szybki.
 
 %prep
