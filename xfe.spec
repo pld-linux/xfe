@@ -1,19 +1,26 @@
 Summary:	X File Explorer (Xfe) is a filemanager for X
 Summary(pl.UTF-8):	X File Explorer - zarządca plików dla X
 Name:		xfe
-Version:	0.84
+Version:	1.45
 Release:	1
 License:	GPL
 Group:		Applications/File
-Source0:	http://dl.sourceforge.net/xfe/%{name}-%{version}.tar.gz
-# Source0-md5:	8251a0c1545d3cbbb909beb8027414a6
+Source0:	https://downloads.sourceforge.net/project/xfe/xfe/%{version}/%{name}-%{version}.tar.xz
+# Source0-md5:	2e3854b828bace517330751d66372e1e
 URL:		http://roland65.free.fr/xfe/
 BuildRequires:	automake
-BuildRequires:	fox-devel >= 1.4
-BuildRequires:	fox-devel < 1.5
+BuildRequires:	fontconfig-devel
+BuildRequires:	fox16-devel >= 1.6
+BuildRequires:	freetype-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libstdc++-devel
-Requires:	fox >= 1.2
+BuildRequires:	libxcb-devel
+BuildRequires:	perl-XML-Parser
+BuildRequires:	polkit-devel
+BuildRequires:	startup-notification-devel
+BuildRequires:	xorg-lib-libX11-devel
+BuildRequires:	xorg-lib-libXft-devel
+Requires:	fox16 >= 1.6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -29,12 +36,19 @@ Xfe jest niezależny od desktopu, jest napisany za pomocą C++ Fox
 Toolkit. Może wyglądać jak Windows Commander (Total Commander ;)) lub
 MS-Explorer przy czym jest prosty i szybki.
 
+%post
+%update_desktop_database_post
+
+%postun
+%update_desktop_database_postun
+
 %prep
 %setup -q
 
 %build
 cp -f /usr/share/automake/config.sub .
-%configure 
+export FOX_CONFIG=/usr/bin/fox16-config
+%configure
 
 %{__make}
 
@@ -44,6 +58,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/no
+%{__mv} $RPM_BUILD_ROOT%{_localedir}/{pt_PT,pt}
+
 %find_lang %{name}
 
 %clean
@@ -51,9 +68,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS BUGS ChangeLog FAQ README TODO
-%attr(755,root,root) %{_bindir}/*
-%{_prefix}/lib/foxicons
-%{_prefix}/lib/foxrc
-%{_pixmapsdir}/*
-%{_mandir}/man1/*
+%doc ABOUT-NLS AUTHORS BUGS ChangeLog README TODO
+%attr(755,root,root) %{_bindir}/xfe
+%attr(755,root,root) %{_bindir}/xfi
+%attr(755,root,root) %{_bindir}/xfp
+%attr(755,root,root) %{_bindir}/xfw
+%{_datadir}/%{name}
+%{_desktopdir}/xf*.desktop
+%{_mandir}/man1/xf*.1*
+%{_pixmapsdir}/xf*.*
+%{_datadir}/polkit-1/actions/org.xfe.root.policy
