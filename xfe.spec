@@ -1,23 +1,25 @@
 Summary:	X File Explorer (Xfe) is a filemanager for X
 Summary(pl.UTF-8):	X File Explorer - zarządca plików dla X
 Name:		xfe
-Version:	2.0.1
+Version:	2.1
 Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	https://downloads.sourceforge.net/project/xfe/xfe/%{version}/%{name}-%{version}.tar.xz
-# Source0-md5:	6ebdafb40692dc1511d1974b270e23d8
+# Source0-md5:	f8b09ff275797708f0f8d8903468f35c
 URL:		http://roland65.free.fr/xfe/
 BuildRequires:	automake
 BuildRequires:	fontconfig-devel
 BuildRequires:	fox16-devel >= 1.6
 BuildRequires:	freetype-devel
+BuildRequires:	libnotify-devel >= 0.7.7
 BuildRequires:	libpng-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	libxcb-devel
 BuildRequires:	perl-XML-Parser
 BuildRequires:	polkit-devel
 BuildRequires:	startup-notification-devel
+BuildRequires:	udisks2-devel >= 2.7.6
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXft-devel
 Requires:	fox16 >= 1.6
@@ -73,6 +75,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc ABOUT-NLS AUTHORS BUGS ChangeLog README TODO
 %attr(755,root,root) %{_bindir}/xfa
 %attr(755,root,root) %{_bindir}/xfe
+%attr(755,root,root) %{_bindir}/xfe-automount
 %attr(755,root,root) %{_bindir}/xfi
 %attr(755,root,root) %{_bindir}/xfp
 %attr(755,root,root) %{_bindir}/xfw
